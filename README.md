@@ -1,4 +1,4 @@
-### Device specific configuration to build AOSP Android 16 for Raspberry Pi 4 and Raspberry Pi 5.
+### Device specific configuration to build AOSP Android 16 for Raspberry Pi 5.
 
 ***
 
@@ -39,17 +39,8 @@ repo sync
 . build/envsetup.sh
 ```
 
-6. Select the device (`rpi4` or `rpi5`) and build target (tablet UI, `tv` for Android TV, or `car` for Android Automotive):
+6. Select the device `rpi5` and build target (tablet UI, `tv` for Android TV, or `car` for Android Automotive):
 
-```
-lunch aosp_rpi4-bp3a-userdebug
-```
-```
-lunch aosp_rpi4_tv-bp3a-userdebug
-```
-```
-lunch aosp_rpi4_car-bp3a-userdebug
-```
 ```
 lunch aosp_rpi5-bp3a-userdebug
 ```
@@ -66,11 +57,8 @@ lunch aosp_rpi5_car-bp3a-userdebug
 make bootimage systemimage vendorimage -j$(nproc)
 ```
 
-8. Make flashable image for the device (`rpi4` or `rpi5`):
+8. Make flashable image:
 
-```
-./rpi4-mkimg.sh
-```
 ```
 ./rpi5-mkimg.sh
 ```
